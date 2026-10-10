@@ -707,6 +707,33 @@
       line-height: 1.45;
     }
 
+    .fact__value ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .fact__value li {
+      position: relative;
+      padding-left: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .fact__value li:last-child {
+      margin-bottom: 0;
+    }
+
+    .fact__value li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.6em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--rust);
+    }
+
     /* Contact */
     .contact__lead {
       font-family: "Syne", sans-serif;
@@ -838,8 +865,8 @@
         <p class="hero__subtitle">Engineering student. I work on the edges where AI meets education, language, and public data.</p>
         <div class="hero__meta">
           <span>IEM Kolkata</span>
-          <span>B.Tech Computer Science</span>
-          <span>AI · Ed-tech · Systems</span>
+          <span>B.Tech CSE · YGPA 9.11</span>
+          <span>Young Professional · ANNAM.AI / VLED</span>
         </div>
       </div>
       <div class="hero__spark">✦</div>
@@ -854,6 +881,10 @@
         <span class="tape__item">Human Authorship Verification</span>
         <span class="tape__item">Multispectral Edge AI</span>
         <span class="tape__item">Technical Writing</span>
+        <span class="tape__item">Decentralized Authorization</span>
+        <span class="tape__item">Serverless Bengali/Telugu OCR</span>
+        <span class="tape__item">Multispectral Wound Imaging</span>
+        <span class="tape__item">Research Advisor Discovery</span>
         <!-- duplicate for seamless loop -->
         <span class="tape__item">Foundational Literacy & Numeracy</span>
         <span class="tape__item">Small Language Model Benchmarking</span>
@@ -861,30 +892,103 @@
         <span class="tape__item">Human Authorship Verification</span>
         <span class="tape__item">Multispectral Edge AI</span>
         <span class="tape__item">Technical Writing</span>
+        <span class="tape__item">Decentralized Authorization</span>
+        <span class="tape__item">Serverless Bengali/Telugu OCR</span>
+        <span class="tape__item">Multispectral Wound Imaging</span>
+        <span class="tape__item">Research Advisor Discovery</span>
       </div>
     </div>
 
     <section id="work" class="section">
       <div class="wrap grid">
         <div class="section__header">
-          <h2 class="section__title">Selected work</h2>
+          <h2 class="section__title">Projects</h2>
         </div>
         <div class="section__body">
           <ul class="work-list">
             <li class="work-item reveal">
               <h3 class="work-item__title">FLN Assessment Platform</h3>
-              <p class="work-item__desc">AI-powered Foundational Literacy & Numeracy assessment at VLED, IIT Ropar. Worksheet generation, competency mapping, and personalized remediation on a MERN stack.</p>
-              <span class="work-item__meta">VLED Labs · 2026</span>
+              <p class="work-item__desc">AI-powered Foundational Literacy &amp; Numeracy assessment platform: worksheet generation, competency mapping, and personalized remediation. Role-scoped student management across a 7-role governance hierarchy with privacy-preserving handling of personal identifiers, plus Python pipelines scraping curriculum-aligned problem sets from state and NCERT textbooks.</p>
+              <span class="work-item__meta">VLED Labs, IIT Ropar · 2026</span>
+            </li>
+            <li class="work-item reveal">
+              <h3 class="work-item__title">Krishi Darshan Transcript Pipeline</h3>
+              <p class="work-item__desc">Automated pipeline transcribing Hindi audio from 74 episodes of Doordarshan’s Krishi Darshan. Ran on Kaggle T4 GPUs with a checkpoint/resume system, producing a structured CSV of episode metadata and full transcripts (~3,700 words per episode) for downstream agricultural NLP.</p>
+              <span class="work-item__meta">ANNAM.AI · yt-dlp, Whisper-medium</span>
             </li>
             <li class="work-item reveal">
               <h3 class="work-item__title">SLM Tool-Calling Benchmark</h3>
-              <p class="work-item__desc">Benchmarked six small language models on when to act, when to refrain, and how chain-of-thought verbosity trades off against latency and accuracy.</p>
-              <span class="work-item__meta">Independent research · 2026</span>
+              <p class="work-item__desc">Benchmarked six small language models (Qwen2.5-1.5B, Phi-3.5-mini, LFM2.5-1.2B, DeepSeek-R1-Distill-Qwen-1.5B, Phi-4-mini, Ministral-3-3B) on tool-calling accuracy and restraint across 12 prompts. Qwen2.5-1.5B and Phi-3.5-mini tied at 85.7% accuracy, with Qwen ~4.6× faster; verbose chain-of-thought surfaced as a latency/accuracy tradeoff in DeepSeek-R1.</p>
+              <span class="work-item__meta">ANNAM.AI · side project</span>
             </li>
             <li class="work-item reveal">
-              <h3 class="work-item__title">Krishi Darshan Pipeline</h3>
-              <p class="work-item__desc">Automated transcription pipeline for 74 episodes of Doordarshan’s agricultural program, built with yt-dlp and Whisper-medium for downstream Hindi NLP work.</p>
-              <span class="work-item__meta">annam.ai · 2026</span>
+              <h3 class="work-item__title">ResearchMatch v2</h3>
+              <p class="work-item__desc">Helps students find research internship advisors at premier Indian institutes (IITs, IIITs, NITs, IISc). Every professor is cross-checked through a secondary web search before being surfaced, and cold-email drafts cite real publications from the verified profile.</p>
+              <span class="work-item__meta">Personal project · Live on GitHub Pages</span>
+            </li>
+            <li class="work-item reveal">
+              <h3 class="work-item__title">Vi-Notes Basic Writing Editor</h3>
+              <p class="work-item__desc">Contributed the Basic Writing Editor feature to Vi-Notes, an open-source human authorship verification platform: a controlled React textarea backed by an Express.js / MongoDB Atlas API to persist writing sessions.</p>
+              <span class="work-item__meta">Vicharanashala Lab, IIT Ropar · 2026</span>
+            </li>
+            <li class="work-item reveal">
+              <h3 class="work-item__title">Multispectral Wound Diagnostics</h3>
+              <p class="work-item__desc">Proposed a contactless wound monitoring framework using multispectral imaging (RGB + NIR) with an edge-AI pipeline for temperature, oxygenation, and colorimetric analysis.</p>
+              <span class="work-item__meta">Innovación 2026 · Poster</span>
+            </li>
+            <li class="work-item reveal">
+              <h3 class="work-item__title">Automatic Plant Watering System</h3>
+              <p class="work-item__desc">An automated irrigation system built on Arduino and a soil-moisture sensor, spanning circuit setup, sensor calibration, and testing.</p>
+              <span class="work-item__meta">Arduino project</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="wrap grid">
+        <div class="section__header">
+          <h2 class="section__title">Experience</h2>
+        </div>
+        <div class="section__body">
+          <ul class="work-list">
+            <li class="work-item reveal">
+              <h3 class="work-item__title">Young Professional</h3>
+              <p class="work-item__desc">Converted from an on-site intern to Young Professional at ANNAM.AI. Worked primarily on the FLN Assessment Platform under Pavani Ayinampudi (Internship Coordinator) and delivered the Krishi Darshan transcription pipeline under Karan Choudhary (Senior AI Engineer). Developed product specs, system workflows, and feature requirements for AI-driven worksheet generation and competency mapping; collaborated on a MERN stack application with frontend and UI refinement; built a Chrome extension for black-and-white worksheet previews and improved the image preprocessing pipeline.</p>
+              <span class="work-item__meta">ANNAM.AI / VLED, IIT Ropar · May–Jul 2026</span>
+            </li>
+            <li class="work-item reveal">
+              <h3 class="work-item__title">Virtual Intern, Full Stack Development</h3>
+              <p class="work-item__desc">Studied and implemented core MERN stack concepts (MongoDB, Express, React, Node.js). Built and tested web application modules with JavaScript and Node.js, gaining hands-on understanding of backend systems, APIs, and database integration. Mentor: Dr. Sudarshan Iyengar.</p>
+              <span class="work-item__meta">IIT Ropar · Jan–Mar 2026</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="hackathons" class="section">
+      <div class="wrap grid">
+        <div class="section__header">
+          <h2 class="section__title">Hackathons &amp; competitions</h2>
+        </div>
+        <div class="section__body">
+          <ul class="work-list">
+            <li class="work-item reveal">
+              <h3 class="work-item__title">Praaman</h3>
+              <p class="work-item__desc">Decentralized authorization platform on Hyperledger Besu, Solidity, and OpenZeppelin; presented at the SIH 2026 IEM internal round.</p>
+              <span class="work-item__meta">Smart India Hackathon 2026</span>
+            </li>
+            <li class="work-item reveal">
+              <h3 class="work-item__title">Notice, made simple</h3>
+              <p class="work-item__desc">A mobile-first web app that turns a photo or pasted text of a Bengali or Telugu notice into a plain-language summary, action steps, key deadlines, and a spoken audio version. Backend used Python AWS Lambda behind API Gateway with S3 and DynamoDB, bundling Tesseract OCR for Bengali/Telugu and Edge TTS for audio. Added Bedrock multi-region failover and a Groq fallback after account-activation delays blocked managed services, keeping the app working end to end.</p>
+              <span class="work-item__meta">WeMakeDevs × AWS First Commit · 2026</span>
+            </li>
+            <li class="work-item reveal">
+              <h3 class="work-item__title">IoT-Based Robotic Arms</h3>
+              <p class="work-item__desc">Poster accepted for the second consecutive year; the 2026 edition is redesigned with extended research and improved statistical visualizations.</p>
+              <span class="work-item__meta">IEEE SSCS Kolkata Chapter · 2025, 2026</span>
             </li>
           </ul>
         </div>
@@ -908,7 +1012,7 @@
             <a class="interest reveal" href="https://www.amazon.in/stores/Arnab-Acharya/author/B0GPYTDDHC?ref=sr_ntt_srch_lnk_1&qid=1790012834&sr=8-1&shoppingPortalEnabled=true" target="_blank" rel="noopener noreferrer">
               <div>
                 <h3 class="interest__title">Money 101</h3>
-                <p class="interest__desc">A concise financial literacy guide for college students: budgeting, saving, and the basics of investing, written as a practical manual rather than advice theatre.</p>
+                <p class="interest__desc">The College Student’s Guide to Personal Finance — a concise 10-page financial literacy guide covering budgeting, saving, and the basics of investing, written as a practical manual rather than advice theatre.</p>
               </div>
               <span class="interest__tag">Writing · Guide</span>
             </a>
@@ -931,19 +1035,34 @@
         </div>
         <div class="section__body">
           <p class="about__lead reveal">Most of my work lives in two places: making AI useful for real classrooms, and understanding when small models should act rather than answer.</p>
-          <p class="about__text reveal">I am a B.Tech student in Computer Science at the Institute of Engineering and Management, Kolkata. I have interned at VLED, IIT Ropar, worked on MERN-stack ed-tech tools, and built independent projects around language models, audio pipelines, and human authorship verification. I like systems that are legible, durable, and slightly opinionated.</p>
+          <p class="about__text reveal">I am a B.Tech student in Computer Science and Engineering at the Institute of Engineering and Management, Kolkata. I work at the intersection of AI and public-interest products: I joined VLED at IIT Ropar as an on-site intern and was converted to a Young Professional at ANNAM.AI, where I helped build an ed-tech assessment platform and an agricultural transcription pipeline. Alongside that I build independent projects around language models, audio pipelines, human authorship verification, and decentralized systems, and I like systems that are legible, durable, and slightly opinionated.</p>
           <div class="facts">
             <div class="fact reveal">
               <span class="label fact__label">Education</span>
-              <p class="fact__value">B.Tech in Computer Science and Engineering, IEM Kolkata. Class X: 94.8%, Class XII: 85.8%.</p>
+              <div class="fact__value">
+                <ul>
+                  <li>B.Tech in Computer Science and Engineering, IEM Kolkata — YGPA 9.11 (Year 1)</li>
+                  <li>Delhi Public School, Ruby Park — Class XII (PCM + Computer Science): 85.8%</li>
+                  <li>Delhi Public School, Ruby Park — Class X: 94.8%</li>
+                </ul>
+              </div>
             </div>
             <div class="fact reveal">
-              <span class="label fact__label">Recognitions</span>
-              <p class="fact__value">NPTEL Gold + Top 5% in Joy of Computing using Python; Gold + Top 1% in Enhancing Soft Skills & Personality; SCNTSE Second Round Qualifier.</p>
+              <span class="label fact__label">Awards</span>
+              <div class="fact__value">
+                <ul>
+                  <li>Department Rank 33 of 500+ (B.Tech CSE, Year 1), 2025–26</li>
+                  <li>NPTEL — Joy of Computing Using Python: 94% (Gold, Elite, Top 5%)</li>
+                  <li>NPTEL — Python for Data Science: 80% (Silver, Elite, Top 5%)</li>
+                  <li>NPTEL — Enhancing Soft Skills &amp; Personality: 98% (Gold, Elite, Top 1%)</li>
+                  <li>SCNTSE 2025 — Second-round qualifier, with first-round medal</li>
+                  <li>Scholar Badge 2019 &amp; 2023, Delhi Public School, Ruby Park</li>
+                </ul>
+              </div>
             </div>
             <div class="fact reveal">
               <span class="label fact__label">Tools</span>
-              <p class="fact__value">Python, TypeScript, C, React, Node.js, Express, MongoDB, MySQL, Git, MATLAB, AutoCAD, Arduino.</p>
+              <p class="fact__value">Python, TypeScript, C, React, Node.js, Express, MongoDB, MySQL, Git, MATLAB, Arduino.</p>
             </div>
             <div class="fact reveal">
               <span class="label fact__label">Languages</span>
