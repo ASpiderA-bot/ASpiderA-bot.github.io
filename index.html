@@ -286,7 +286,7 @@
 
     .site-header__nav {
       display: flex;
-      gap: clamp(1rem, 2.5vw, 2rem);
+      gap: clamp(0.9rem, 2.5vw, 2rem);
       list-style: none;
       margin: 0;
       padding: 0;
@@ -533,6 +533,7 @@
     .work-item {
       display: grid;
       grid-template-columns: 1fr;
+      overflow-wrap: anywhere;
       gap: 0.5rem 2rem;
       padding: clamp(1.5rem, 3vh, 2rem) 0;
       border-top: 1px solid var(--rule);
@@ -554,6 +555,14 @@
       font-size: 1.2rem;
       font-weight: 700;
       letter-spacing: -0.01em;
+    }
+
+    .work-item__attribution {
+      margin-top: 0.5rem;
+      color: rgba(245, 243, 235, 0.65);
+      font-size: 0.8rem;
+      font-style: italic;
+      line-height: 1.5;
     }
 
     .work-item__desc {
@@ -809,10 +818,16 @@
     }
 
     .reveal {
-      opacity: 0;
-      transform: translateY(20px);
       transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
                   transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Hide content only after the reveal observer is ready to reveal it. */
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal.is-pending {
+        opacity: 0;
+        transform: translateY(20px);
+      }
     }
 
     .reveal.is-visible {
@@ -865,7 +880,7 @@
         <p class="hero__subtitle">Engineering student. I work on the edges where AI meets education, language, and public data.</p>
         <div class="hero__meta">
           <span>IEM Kolkata</span>
-          <span>B.Tech CSE · YGPA 9.11</span>
+          <span>B.Tech CSE · YGPA 9.10</span>
           <span>Young Professional · ANNAM.AI / VLED</span>
         </div>
       </div>
@@ -885,6 +900,9 @@
         <span class="tape__item">Serverless Bengali/Telugu OCR</span>
         <span class="tape__item">Multispectral Wound Imaging</span>
         <span class="tape__item">Research Advisor Discovery</span>
+        <span class="tape__item">Accessible Audio Learning</span>
+        <span class="tape__item">Urban Shade Mapping</span>
+        <span class="tape__item">Embedded Prototyping</span>
         <!-- duplicate for seamless loop -->
         <span class="tape__item">Foundational Literacy & Numeracy</span>
         <span class="tape__item">Small Language Model Benchmarking</span>
@@ -896,6 +914,9 @@
         <span class="tape__item">Serverless Bengali/Telugu OCR</span>
         <span class="tape__item">Multispectral Wound Imaging</span>
         <span class="tape__item">Research Advisor Discovery</span>
+        <span class="tape__item">Accessible Audio Learning</span>
+        <span class="tape__item">Urban Shade Mapping</span>
+        <span class="tape__item">Embedded Prototyping</span>
       </div>
     </div>
 
@@ -910,6 +931,14 @@
               <h3 class="work-item__title">FLN Assessment Platform</h3>
               <p class="work-item__desc">AI-powered Foundational Literacy &amp; Numeracy assessment platform: worksheet generation, competency mapping, and personalized remediation. Role-scoped student management across a 7-role governance hierarchy with privacy-preserving handling of personal identifiers, plus Python pipelines scraping curriculum-aligned problem sets from state and NCERT textbooks.</p>
               <span class="work-item__meta">VLED Labs, IIT Ropar · 2026</span>
+            </li>
+            <li class="work-item reveal">
+              <div>
+                <h3 class="work-item__title">Making Education Audible</h3>
+                <p class="work-item__attribution">National University of Singapore (NUS) · IRIS / SMOL Lab Interview Project · Associate Professor Kokil Jaidka</p>
+              </div>
+              <p class="work-item__desc">Developed a two-host Hindi audio lesson from NCERT science material for an NUS IRIS interview task associated with Associate Professor Kokil Jaidka’s SMOL Lab, designed around blind and low-vision learners. Conducted eight baseline-led prompt/script experiments and six audio iterations, documenting failures, variable changes, and resulting decisions. Built a Python TTS workflow with speaker assignment and pace control using Gemini-assisted scripting, Sarvam AI, ElevenLabs, and FFmpeg; reused 31 existing audio segments and synthesized only two new turns for the final 4:51 lesson.</p>
+              <span class="work-item__meta">Sep–Oct 2026 · Python, Gemini-assisted scripting, Sarvam AI, ElevenLabs, FFmpeg</span>
             </li>
             <li class="work-item reveal">
               <h3 class="work-item__title">Krishi Darshan Transcript Pipeline</h3>
@@ -937,9 +966,9 @@
               <span class="work-item__meta">Innovación 2026 · Poster</span>
             </li>
             <li class="work-item reveal">
-              <h3 class="work-item__title">Automatic Plant Watering System</h3>
-              <p class="work-item__desc">An automated irrigation system built on Arduino and a soil-moisture sensor, spanning circuit setup, sensor calibration, and testing.</p>
-              <span class="work-item__meta">Arduino project</span>
+              <h3 class="work-item__title">Miniature Lighthouse System</h3>
+              <p class="work-item__desc">Built a three-mode Arduino lighthouse prototype with capacitive-touch mode selection: audiovisual Morse SOS, temperature/humidity monitoring, and ultrasonic proximity sensing. Programmed SPI-driven 8×8 LED-matrix visualizations, threshold-based audio alerts, timed sensor polling, and ultrasonic echo-timeout handling, with serial diagnostics for sensor readings and errors.</p>
+              <span class="work-item__meta">Dec 2025 · Arduino (C++), DHT11, HC-SR04, TTP223, MAX7219, SPI</span>
             </li>
           </ul>
         </div>
@@ -984,6 +1013,14 @@
               <h3 class="work-item__title">Notice, made simple</h3>
               <p class="work-item__desc">A mobile-first web app that turns a photo or pasted text of a Bengali or Telugu notice into a plain-language summary, action steps, key deadlines, and a spoken audio version. Backend used Python AWS Lambda behind API Gateway with S3 and DynamoDB, bundling Tesseract OCR for Bengali/Telugu and Edge TTS for audio. Added Bedrock multi-region failover and a Groq fallback after account-activation delays blocked managed services, keeping the app working end to end.</p>
               <span class="work-item__meta">WeMakeDevs × AWS First Commit · 2026</span>
+            </li>
+            <li class="work-item reveal">
+              <div>
+                <h3 class="work-item__title">CoolRoute Delhi</h3>
+                <p class="work-item__attribution">Frontend Development &amp; Integration</p>
+              </div>
+              <p class="work-item__desc">Built an interactive map-based frontend that lets users select walking-route endpoints in central Delhi and view the returned route with an estimated shade score, distance, and walking time. Integrated Amazon Location Service maps with an AWS Lambda Function URL API; implemented fallback map rendering and displayed shade-data provenance and estimation limits.</p>
+              <span class="work-item__meta">Environmental Hacks Hackathon · 2026 · JavaScript, MapLibre GL JS, Amazon Location Service, AWS Lambda</span>
             </li>
             <li class="work-item reveal">
               <h3 class="work-item__title">IoT-Based Robotic Arms</h3>
@@ -1041,7 +1078,7 @@
               <span class="label fact__label">Education</span>
               <div class="fact__value">
                 <ul>
-                  <li>B.Tech in Computer Science and Engineering, IEM Kolkata — YGPA 9.11 (Year 1)</li>
+                  <li>B.Tech in Computer Science and Engineering, IEM Kolkata — YGPA 9.10 (Year 1)</li>
                   <li>Delhi Public School, Ruby Park — Class XII (PCM + Computer Science): 85.8%</li>
                   <li>Delhi Public School, Ruby Park — Class X: 94.8%</li>
                 </ul>
@@ -1141,13 +1178,14 @@
     // Intersection reveals for sections
     (function () {
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (prefersReducedMotion) return;
+      if (prefersReducedMotion || !('IntersectionObserver' in window)) return;
 
       const reveals = document.querySelectorAll('.reveal');
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
           if (entry.isIntersecting) {
             setTimeout(() => {
+              entry.target.classList.remove('is-pending');
               entry.target.classList.add('is-visible');
             }, (index % 4) * 100);
             observer.unobserve(entry.target);
@@ -1155,7 +1193,10 @@
         });
       }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
 
-      reveals.forEach((el) => observer.observe(el));
+      reveals.forEach((el) => {
+        el.classList.add('is-pending');
+        observer.observe(el);
+      });
     })();
   </script>
 </body>
